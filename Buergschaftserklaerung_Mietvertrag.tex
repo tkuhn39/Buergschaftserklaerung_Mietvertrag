@@ -1,0 +1,168 @@
+\documentclass[10pt, a4paper]{letter}
+\usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage{nopageno}
+\usepackage{xcolor}
+\usepackage[official]{eurosym}
+
+% Tabellen
+\usepackage{tabularx}
+\setlength{\extrarowheight}{5pt}
+
+% Montserrat als Schriftart (i like it)
+\usepackage[defaultfam,tabular,lining]{montserrat}
+\usepackage[T1]{fontenc}
+\renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
+
+% Seitenränder und Alignment
+\usepackage[left=1.5cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[document]{ragged2e}
+
+% Metadata
+\usepackage[pdftex,
+            pdfauthor={Christopher Katins},
+            pdftitle={Mieterselbstauskunft}]{hyperref}
+
+
+% Normale Hyperref Text Fields können nicht ohne Weiteres mit /hspace o. Ä. auf die maximale Linewidth gezogen werden, daher diese super hilfreiche Neudefinition, die genau das macht!
+% Quelle: https://tex.stackexchange.com/questions/77629/defining-a-width-that-fills-remaining-horizontal-space-for-text-fields-in-hyperr
+\newlength\TextFieldLength
+\newcommand\TextFieldFill[2][]{%
+  \setlength\TextFieldLength{\linewidth}%
+  \settowidth{\dimen0}{#2 }%
+  \addtolength\TextFieldLength{-\dimen0}%
+  \addtolength\TextFieldLength{-2.22221pt}%
+  \TextField[#1,width=\TextFieldLength]{\raisebox{2pt}{#2 }}%
+}
+% To copy: \TextFieldFill[name=]{}
+
+
+\begin{document}
+\justifying
+
+% Globales Design der TextFields
+\def\DefaultHeightofText{12pt}
+\def\DefaultOptionsofText{backgroundcolor=gray!30,borderwidth=0,bordercolor=white}
+\def\DefaultOptionsofCheckBox{backgroundcolor=gray!30,borderwidth=0,bordercolor=white}
+
+\textbf{\huge Selbstschuldnerische Mietbürgschaft}
+\vspace{.4cm}
+
+\textbf{\Large Zum Mietobjekt}
+
+\TextFieldFill[name=str-nmr]{Straße, Nr. (Zimmer, Etage, ...): }
+
+\TextFieldFill[name=plz-ort]{PLZ, Ort: }
+
+\TextFieldFill[name=mietbeginn]{Mietbeginn: }
+
+\TextFieldFill[name=nettokaltmiete]{Nettokaltmiete: }
+
+\vspace{.8cm}
+\textbf{\Large Zum/Zur Vermieter/in}
+
+\TextFieldFill[name=name]{Name, Vorname: }
+
+\TextFieldFill[name=str-nmr-bisherig]{Straße, Nr. (bisherig): }
+
+\TextFieldFill[name=plz-ort-bisherig]{PLZ, Ort (bisherig): }
+
+\vspace{.8cm}
+\textbf{\Large Zum ersten Hauptmieter}
+
+\TextFieldFill[name=name]{Name, Vorname: }
+
+\TextFieldFill[name=str-nmr-bisherig]{Straße, Nr. (bisherig): }
+
+\TextFieldFill[name=plz-ort-bisherig]{PLZ, Ort (bisherig): }
+
+\vspace{.8cm}
+\textbf{\Large Zum zweiten Hauptmieter}
+
+\TextFieldFill[name=name]{Name, Vorname: }
+
+\TextFieldFill[name=str-nmr-bisherig]{Straße, Nr. (bisherig): }
+
+\TextFieldFill[name=plz-ort-bisherig]{PLZ, Ort (bisherig): }
+
+\vspace{.8cm}
+\textbf{\Large Zum ersten Bürge}
+
+\TextFieldFill[name=name]{Name, Vorname: }
+
+\TextFieldFill[name=str-nmr-bisherig]{Straße, Nr. (bisherig): }
+
+\TextFieldFill[name=plz-ort-bisherig]{PLZ, Ort (bisherig): }
+
+\TextFieldFill[name=geb-datum]{Geburtsdatum: }
+
+\TextFieldFill[name=perso-nummer]{Personalausweisnummer: }
+
+\vspace{.8cm}
+\textbf{\Large Zum zweiten Bürge}
+
+\TextFieldFill[name=name]{Name, Vorname: }
+
+\TextFieldFill[name=str-nmr-bisherig]{Straße, Nr. (bisherig): }
+
+\TextFieldFill[name=plz-ort-bisherig]{PLZ, Ort (bisherig): }
+
+\TextFieldFill[name=geb-datum]{Geburtsdatum: }
+
+\TextFieldFill[name=perso-nummer]{Personalausweisnummer: }
+
+
+
+\vspace{.8cm}
+\textbf{\Large Umfang der Bürgschaft}
+
+Hiermit übernehmen wir, die oben genannten Bürgen, gegenüber dem Vermieter die \textbf{selbstschuldnerische Bürgschaft}
+für alle bestehenden und zukünftigen Verbindlichkeiten des Mieters aus dem oben genannten Mietverhältnis als
+\textbf{Gesamtschuldner} (§ 421 BGB). Das bedeutet, der Vermieter kann jeden Bürgen einzeln für die gesamte Summe in
+Anspruch nehmen. Die Bürgschaft umfasst insbesondere:
+\begin{itemize}
+    \item Mietzahlungen (Kaltmiete und Nebenkostenvorauszahlungen)
+    \item Nachzahlungen aus Betriebskostenabrechnungen
+    \item Schäden an der Mietsache und unterlassene Schönheitsreparaturen
+    \item Sämtliche sonstigen Forderungen aus dem Mietvertrag (z. B. Verzugskosten, Räumungskosten).
+\end{itemize}
+Wir verzichten hiermit ausdrücklich auf die \textbf{Einrede der Vorausklage} (§ 771 BGB) sowie auf die Einrede der
+Anfechtbarkeit und Aufrechenbarkeit (§ 770 BGB). Wir verpflichten uns, auf erste Anforderung des Vermieters zu leisten.
+Diese Bürgschaft ist unbefristet und gilt auch bei einer Erhöhung der Miete sowie bei einem Vermieterwechsel.
+
+\textbf{Haftungsbegrenzung:} Die Bürgschaft ist der Höhe nach begrenzt auf einen Höchstbetrag von: \\
+\TextField[name=unterschrift,width=3cm]{} Euro. (Hinweis: Max. drei Nettokaltmieten gemäß § 551 BGB)
+
+\vspace{3em}
+
+\begin{minipage}[t]{8.5cm}
+    \TextField[name=ort_datum_mieter,width=8.5cm]{}\\
+    Ort, Datum
+    \vspace{3em} % Platz für die eigentliche Unterschrift
+
+    \rule{8.5cm}{0.5pt} \\
+    Unterschrift erster Hauptmieter
+    \vspace{3em} % Platz für die eigentliche Unterschrift
+
+    \rule{8.5cm}{0.5pt} \\
+    Unterschrift zweiter Hauptmieter
+    \vspace{3em} % Platz für die eigentliche Unterschrift
+
+    \rule{8.5cm}{0.5pt} \\
+    Unterschrift erster Bürge
+    \vspace{3em} % Platz für die eigentliche Unterschrift
+
+    \rule{8.5cm}{0.5pt} \\
+    Unterschrift zweiter Bürge
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{8.5cm}
+    \TextField[name=ort_datum_vermieter,width=8.5cm]{}\\
+    Ort, Datum
+    \vspace{3em} % Platz für die eigentliche Unterschrift
+
+    \rule{8.5cm}{0.5pt} \\
+    Unterschrift Vermieter
+\end{minipage}
+
+\end{document}
