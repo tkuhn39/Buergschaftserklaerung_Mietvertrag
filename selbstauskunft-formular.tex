@@ -176,12 +176,19 @@ In die Wohnung werden \TextField[name=num-bewohner,width=1.5cm]{} Personen einzi
     \item SCHUFA-Bonitätsauskunft
     \item Kopie des Personalausweises
     \item Aktuelle BAföG-Bescheinigung
-    \item Selbstschuldnerische Mietbürgschaftserklärung eines Elternteils jedes Mitbewohners
+    \item Selbstschuldnerische Mietbürgschaftserklärung eines Elternteils
 \end{itemize}
 
-\vspace{.4cm}
+\vspace{1cm}
 
 \TextField[name=unterschrift,width=9cm]{}\\
-Ort, Datum und Unterschrift Mietinteressent/in
+Ort, Datum
+\vspace{2cm} % Platz für die eigentliche Unterschrift
+
+\rule{9cm}{0.5pt} \\ % Die Linie: 6cm lang, 0.5pt dick
+Unterschrift Mietinteressent/in
+
+
+
 
 \end{document}
